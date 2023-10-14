@@ -1,13 +1,4 @@
-/*
-Coded by LeeOn123
-Please fking code ur script by ur self, kid.
 
-I changed the random integers range to the max of int32.
-Now 386 systems should work well.
-
-Looks like most people want to hit the url but not the host/ip.
-As a result, here you are.
-*/
 package main
 
 import (
