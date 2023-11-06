@@ -1,5 +1,5 @@
 # DxCyberD - Dos tool
-<img src="assest/Spy-ware.png" width="100%" hight="auto">
+<img src="assest/dx-web.jpg" width="100%" hight="auto">
 <div align="left">
   <a href="https://www.youtube.com/channel/UCeN_5wXIV8WW4_vtWbKk8tw" target="_blank">
     <img src="https://img.shields.io/static/v1?message=Youtube&logo=youtube&label=&color=FF0000&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="youtube logo"  />
