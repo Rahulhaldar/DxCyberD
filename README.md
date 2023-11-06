@@ -20,7 +20,6 @@
 
 **Usage of Dx for any malicious or unauthorized activities is strictly prohibited.** The developers of Dx and the Cyber-D team are not responsible for any damage, loss, or misuse of this tool. It is the responsibility of the user to comply with all applicable laws and regulations while using this Tool.
 
-## Installation
 
 ### How to Install
 
@@ -35,6 +34,19 @@ Linux commands.
 * `git clone https://github.com/kdo2064/DxCyberD`
 
 * `cd DxCyberD`
+
+Termux commands.
+
+* `pkg update`
+
+* `pkg upgrade`
+
+* `pkg install python3 git -y`
+
+* `git clone https://github.com/kdo2064/DxCyberD`
+
+* `cd DxCyberD`
+
 
 
 ## Usage
